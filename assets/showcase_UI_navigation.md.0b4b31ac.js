@@ -1,0 +1,1 @@
+import{o as t,c as a}from"./app.dda2bafd.js";const e='{"title":"","description":"","frontmatter":{},"relativePath":"showcase/UI/navigation.md","lastUpdated":1629913415069}',r={};r.render=function(e,r,d,o,i,n){return t(),a("div")};export{e as __pageData,r as default};
