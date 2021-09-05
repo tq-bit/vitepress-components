@@ -1,0 +1,14 @@
+{
+  "name": "documentation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^0.16.1"
+  }
+}
