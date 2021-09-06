@@ -3,7 +3,7 @@ import { useData } from 'vitepress'
 const { site } = useData()
 </script>
 
-# Vitepress components
+# Vitepress
 
 {{site.description}}
 
