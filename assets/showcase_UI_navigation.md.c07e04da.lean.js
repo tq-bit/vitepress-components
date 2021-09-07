@@ -1,1 +1,0 @@
-import{o as t,c as e}from"./app.deef4b48.js";const a='{"title":"","description":"","frontmatter":{},"relativePath":"showcase/UI/navigation.md","lastUpdated":1629913415069}',r={};r.render=function(a,r,o,i,n,s){return t(),e("div")};export{a as __pageData,r as default};
