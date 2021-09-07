@@ -69,6 +69,10 @@
   transition: 0.1s;
 }
 
+html.dark-theme input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
+
 body {
   min-height: 100vh;
   background-color: var(--background-color-secondary);
