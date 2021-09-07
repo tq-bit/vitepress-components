@@ -12,3 +12,9 @@
 | Namespace             | Name             |               Link               |
 | --------------------- | ---------------- | :------------------------------: |
 | /components/UI/Theme/ | QThemeButton.vue | [QThemeButton](./themebutton.md) |
+
+## Sections
+
+| Namespace                | Name        |          Link          |
+| ------------------------ | ----------- | :--------------------: |
+| /components/UI/Sections/ | QBanner.vue | [QBanner](./banner.md) |
