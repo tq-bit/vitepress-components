@@ -1,16 +1,18 @@
 :root.dark-theme {
   /* Background colors */
   --background-color-primary: #1e1e1e;
-  --background-color-secondary: #252526;
   --background-color-tartiary: #2d2d30;
+  --background-color-secondary: #252526;
 
   /* Text colors */
   --text-color-primary: #ddd;
   --text-color-secondary: #eee;
 
   /* Accent colors */
-  --success-color: #00a300;
-  --error-color: #b91d47;
+  --color-info: #34568b;
+  --color-success: #00a300;
+  --color-warning: #ffa500;
+  --color-error: #cd212a;
   --grey-color: #3f3f3f;
 }
 
@@ -21,10 +23,10 @@
   --background-color-tartiary: #fefefe;
 
   /* Accent colors */
-  --accent-color-primary: rgb(227, 157, 58);
-  --accent-color-secondary: rgb(46, 84, 204);
-  --accent-color-blur-primary: rgba(227, 157, 58, 0.7);
-  --accent-color-blur-secondary: rgba(46, 84, 204, 0.7);
+  --accent-color-primary: rgb(104, 182, 118);
+  --accent-color-secondary: rgb(77, 158, 91);
+  --accent-color-blur-primary: rgba(104, 182, 118, 0.7);
+  --accent-color-blur-secondary: rgba(77, 158, 91, 0.7);
 
   /* Text colors */
   --text-color-primary: #222;
@@ -32,8 +34,11 @@
 
   --black-color: #29201a;
   --grey-color: #cacaca;
-  --success-color: #00a300;
-  --error-color: #b91d47;
+  --white-color: #f2f2f2;
+  --color-info: #34568b;
+  --color-success: #00a300;
+  --color-warning: #ffa500;
+  --color-error: #cd212a;
   --duration-quickest: 0.25s;
   --duration-quick: 0.5s;
   --duration-semi: 0.75s;
@@ -53,7 +58,6 @@
   --gap-xl: 1.25rem;
   --gap-xxl: 1.5rem;
   --gap-max: 1.75rem;
-  --text-size-xs: 0.75rem;
   --text-size-sm: 0.9rem;
   --text-size-md: 1.05rem;
   --text-size-lg: 1.15rem;
