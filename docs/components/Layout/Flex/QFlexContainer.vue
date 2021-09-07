@@ -23,9 +23,10 @@ export default {
 
 <style scoped>
 .q-flex {
+  margin: auto;
   width: 95%;
   display: flex;
-  margin: auto;
+  flex-wrap: wrap;
 }
 
 .q-flex-fluid {
