@@ -22,3 +22,8 @@ Anything that is part of a web formular. Form components range from smaller text
 
 [Link to Form Components](./Form/index.md)
 
+## Custom directives
+
+Some useful [custom directives](https://v3.vuejs.org/guide/custom-directive.html), e.g. copying to clipboard when clicking on input el
+
+[Link to Custom Directives](directives/index.md)

@@ -9,6 +9,18 @@ const { site } = useData()
 
 > To be frank, this is just my personal alzheimer website for projects. If you stumble across it, feel free to browse through.
 
+## Component collection
+
+Components are grouped by purpose. Each resides in its own directory and has an equivalent inside the Components - directory of the main Radunia project.
+
+[Visit the showcase](./showcase/index.md)
+
+## Custom directives
+
+Within the showcase, there are some ungrouped, simple custom directives.
+
+[Check out the custom directives](./showcase/directives/index.md)
+
 ## Dependencies
 
 Some components depend upon other components or imported functions. Each of them are outlined in the respective component document.
@@ -23,17 +35,11 @@ The styles for this documentation are located under `/docs/assets/main.css`
 
 ### Function dependencies
 
-Since Vue 3's Composition API makes it easier than ever to share code, a lot of Radunia makes use of it. In order to function, some components might have to have their import paths adjusted before they can be used
+These docs make use of Vue 3's Composition API. Also, in order to function, some components might have to have their import paths adjusted before then can be used.
 
 :::tip Required functions
 Composition functions for this documentation are located under `/docs/use/*.js`
 :::
-
-## Component collection
-
-Components are grouped by purpose. Each resides in its own directory and has an equivalent inside the Components - directory of the main Radunia project.
-
-[Visit the showcase](./showcase/index.md)
 
 ## Global styles
 
@@ -55,8 +61,10 @@ Add the following code to your `App.vue` file:
   --text-color-secondary: #eee;
 
   /* Accent colors */
-  --success-color: #00a300;
-  --error-color: #b91d47;
+  --color-info: #34568b;
+  --color-success: #00a300;
+  --color-warning: #ffa500;
+  --color-error: #cd212a;
   --grey-color: #3f3f3f;
 }
 
@@ -67,10 +75,10 @@ Add the following code to your `App.vue` file:
   --background-color-tartiary: #fefefe;
 
   /* Accent colors */
-  --accent-color-primary: rgb(227, 157, 58);
-  --accent-color-secondary: rgb(46, 84, 204);
-  --accent-color-blur-primary: rgba(227, 157, 58, 0.7);
-  --accent-color-blur-secondary: rgba(46, 84, 204, 0.7);
+  --accent-color-primary: rgb(104, 182, 118);
+  --accent-color-secondary: rgb(77, 158, 91);
+  --accent-color-blur-primary: rgba(104, 182, 118, 0.7);
+  --accent-color-blur-secondary: rgba(77, 158, 91, 0.7);
 
   /* Text colors */
   --text-color-primary: #222;
@@ -78,8 +86,11 @@ Add the following code to your `App.vue` file:
 
   --black-color: #29201a;
   --grey-color: #cacaca;
-  --success-color: #00a300;
-  --error-color: #b91d47;
+  --white-color: #f2f2f2;
+  --color-info: #34568b;
+  --color-success: #00a300;
+  --color-warning: #ffa500;
+  --color-error: #cd212a;
   --duration-quickest: 0.25s;
   --duration-quick: 0.5s;
   --duration-semi: 0.75s;
@@ -99,7 +110,6 @@ Add the following code to your `App.vue` file:
   --gap-xl: 1.25rem;
   --gap-xxl: 1.5rem;
   --gap-max: 1.75rem;
-  --text-size-xs: 0.75rem;
   --text-size-sm: 0.9rem;
   --text-size-md: 1.05rem;
   --text-size-lg: 1.15rem;
