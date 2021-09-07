@@ -1,6 +1,7 @@
 <template>
   <div :class="{ reverse: reversed, topside: !reversed }">
     <button
+      type="button"
       :class="{
         expanded: isExpanded,
         collapsed: !isExpanded,
