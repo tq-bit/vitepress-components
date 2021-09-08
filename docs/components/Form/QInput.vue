@@ -1,5 +1,4 @@
 <template>
-  <div class="q-input">
     <label :for="id" class="q-input-label">
       {{ label }}
       <span class="q-input-required-sign" v-if="required">{{
@@ -30,7 +29,6 @@
     >
       {{ error }}
     </small>
-  </div>
 </template>
 
 <script>
@@ -110,7 +108,6 @@ export default {
 
 .q-input-base:focus.q-error {
   border-bottom: var(--gap-xxs) solid var(--color-error);
-
 }
 
 
