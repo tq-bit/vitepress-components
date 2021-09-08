@@ -25,21 +25,8 @@ Within the showcase, there are some ungrouped, simple custom directives.
 
 Some components depend upon other components or imported functions. Each of them are outlined in the respective component document.
 
-### Style dependencies
-
-While Radunis's components have their own scoped style, most of require root CSS variables. They can be found under [Global Styles](#global-styles).
-
-:::tip Required styles
-The styles for this documentation are located under `/docs/assets/main.css`
-:::
-
-### Function dependencies
-
-These docs make use of Vue 3's Composition API. Also, in order to function, some components might have to have their import paths adjusted before then can be used.
-
-:::tip Required functions
-Composition functions for this documentation are located under `/docs/use/*.js`
-:::
+- The styles for this documentation are located under `/docs/assets/main.css`
+- Composition functions for this documentation are located under `/docs/use/*.js`
 
 ## Global styles
 
