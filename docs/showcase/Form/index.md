@@ -2,9 +2,9 @@
 
 ## Input wrappers
 
-| Namespace             | Name |    Link    |
-| --------------------- | ---- | :--------: |
-| /components/Form/.../ | ...  | [...](../) |
+| Namespace                     | Name            |               Link               |
+| ----------------------------- | --------------- | :------------------------------: |
+| /components/Form/QInputGroup/ | QInputGroup.vue | [QInputGroup](./input-groups.md) |
 
 ## Input elements
 
