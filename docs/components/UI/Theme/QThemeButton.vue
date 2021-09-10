@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import uuid from "../../../use/uuid";
+import uuid from "../../../use/uuid.js";
 import { ref, onMounted } from "vue";
 
 export default {

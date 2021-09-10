@@ -20,8 +20,12 @@ app.mount('#app');
 
 ## Copy to clipboard
 
+Click on an element to copy its value directly to the clipboard. Uses navigator's clipboard API.
+
+[Browser Support](https://caniuse.com/?search=navigator%20clipboard)
+
 :::warning
-Currently only works with Input values
+v-clipboard Currently only works with Input values
 :::
 
 ### Usage
@@ -47,3 +51,31 @@ You can then use `v-clip` anywhere in your project
 ### Full directive's code
 
 <<< @/directives/vClip.js
+
+## Scroll element into view
+
+Click on an element to scroll it to the top of the page. Accepts an optional binding to provide an offset, e.g. for fixed or absolutely positoined Navbars.
+
+### Usage
+
+Import the following directive/s
+
+```javascript
+import vScroll from '../../directives/vScroll.js';
+```
+Register in your `main.js` file:
+
+```js
+app.directive('scroll', vScroll);
+```
+
+You can then use `v-scroll` anywhere in your project
+
+```vue
+<h3 v-scroll>My awesome blog post</h3>
+<h3 v-scroll="200">My awesome blog post with an Y-axis-offset of 200px</h3>
+```
+
+### Full directive's code
+
+<<< @/directives/vScroll.js
