@@ -3,6 +3,7 @@
     class="q-flex"
     :class="{
       'q-flex-fluid': fluid === true,
+      'q-flex-full-page': onepager === true,
     }"
   >
     <slot />
@@ -13,6 +14,11 @@
 export default {
   props: {
     fluid: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    onepager: {
       type: Boolean,
       required: false,
       default: false,
@@ -31,5 +37,11 @@ export default {
 
 .q-flex-fluid {
   width: 100%;
+}
+
+.q-flex-full-page {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 </style>
