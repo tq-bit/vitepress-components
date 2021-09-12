@@ -2,6 +2,7 @@
 import { reactive } from 'vue';
 
 import QInput from '../../components/Form/QInput.vue'
+import QSelect from '../../components/Form/QSelect.vue';
 import QButton from '../../components/Form/QButton.vue'
 import QInputGroup from '../../components/Form/QInputGroup.vue'
 import QFlexContainer from "../../components/Layout/Flex/QFlexContainer.vue"
@@ -12,11 +13,36 @@ const inputForm = reactive({
   lastName: "",
   cityName: "",
   postcalCode: "",
+  cityName: "",
+  email: "",
+  phone: "",
   reservanceDate: "",
+  visitors: "",
   review: false,
 })
 
-const onSubmitForm = () => inputForm.review = true;
+const visitorOptions = [
+  'One Visitor',
+  'Two Visitors',
+  'Three Visitors',
+];
+const onCheckForm = () => inputForm.review = true;
+const onSubmitForm = () => {
+  alert('Submitted form successfully')
+  onResetForm();
+};
+const onResetForm = () => {
+  inputForm.firstName = "";
+  inputForm.lastName = "";
+  inputForm.cityName = "";
+  inputForm.postcalCode = "";
+  inputForm.cityName = "";
+  inputForm.email = "";
+  inputForm.phone = "";
+  inputForm. reservanceDate = "";
+  inputForm.visitors = null;
+  inputForm.review = false;
+}
 </script>
 
 <style>
@@ -48,6 +74,7 @@ Import the following component/s:
 
 ```javascript
 import QInput from '../../components/Form/QInput.vue'
+import QSelect from '../../components/Form/QSelect.vue';
 import QButton from '../../components/Form/QButton.vue'
 import QInputGroup from '../../components/Form/QInputGroup.vue'
 import QFlexContainer from "../../components/Layout/Flex/QFlexContainer.vue"
@@ -64,7 +91,7 @@ QInputGroup provides a wrapper for input elements using the `<legend>` - tag.
 <q-input-group :border="true" title="Personal information">
   <q-flex-container fluid>
     <q-flex-column :cols="6" :smCols="12">
-      <q-input type="text" labelPrefix="Type in your " label="First Name" v-model="inputForm.firstName" />
+      <q-input required type="text" labelPrefix="Type in your " label="First Name" v-model="inputForm.firstName" />
     </q-flex-column>
     <q-flex-column :cols="6" :smCols="12">
       <q-input type="text" labelPrefix="Type in your " label="Last Name" v-model="inputForm.lastName" />
@@ -76,10 +103,19 @@ QInputGroup provides a wrapper for input elements using the `<legend>` - tag.
       <q-input type="text" labelPrefix="Type in your " label="Postal code" v-model="inputForm.postalCode" />
     </q-flex-column>
     <q-flex-column :cols="6" :smCols="12">
-      <q-input type="date" labelPrefix="Select your " label="Date of reservation" v-model="inputForm.reservanceDate" />
+      <q-input required type="email" labelPrefix="Type in your " label="Email adress" v-model="inputForm.email" />
+    </q-flex-column>
+    <q-flex-column :cols="6" :smCols="12">
+      <q-input type="tel" labelPrefix="Type in your " label="Phone number" v-model="inputForm.phone" />
+    </q-flex-column>
+    <q-flex-column :cols="6" :smCols="12">
+      <q-input required type="date" labelPrefix="Select your " label="Date of reservation" v-model="inputForm.reservanceDate" />
+    </q-flex-column>
+    <q-flex-column :cols="6" :smCols="12">
+      <q-select required labelPrefix="Please select the " label="Number of attendees" :options="visitorOptions" v-model="inputForm.visitors" />
     </q-flex-column>
     <q-flex-column :cols="12">
-      <q-button label="Submit form" type="Submit" />
+      <q-button label="Check options" type="Button" @click="onCheckForm" />
     </q-flex-column>
   </q-flex-container>
 </q-input-group>
@@ -88,12 +124,13 @@ QInputGroup provides a wrapper for input elements using the `<legend>` - tag.
 <h3>Please review your input:</h3>
 <p>Name: {{inputForm.firstName}} {{inputForm.lastName}} </p>
 <p>Adress: {{inputForm.postalCode}} {{inputForm.cityName}}</p>
-<p>Reserving for: {{inputForm.reservanceDate}} </p>
+<p>Reserving for: {{inputForm.reservanceDate}} | {{inputForm.visitors}}</p>
+{{inputForm}}
+<q-button label="Submit form" type="Submit" />
+<q-button variant="link" label="Reset form" type="Reset" @click="onResetForm"/>
 </section>
 
 </form>
-
-
 
 ## Full component's code
 
