@@ -3,23 +3,37 @@ import { useData } from 'vitepress'
 const { site } = useData()
 </script>
 
-# Vitepress
+# Radunia Components
 
 {{site.description}}
-
-> To be frank, this is just my personal alzheimer website for projects. If you stumble across it, feel free to browse through.
 
 ## Component collection
 
 Components are grouped by purpose. Each resides in its own directory and has an equivalent inside the Components - directory of the main Radunia project.
 
-[Visit the showcase](./showcase/index.md)
+### Layout Library
+
+> Components that provide structure to a website, using grids or flexboxes.
+>
+> [Link to Layout Components](./showcase/Layout/index.md);
+
+### UI Library
+
+> Anything that requires user interaction without meaningful feedback.
+>
+> [Link to UI Components](./showcase/UI/index.md)
+
+### Form Library
+
+> Anything that is part of a web formular. Form components range from smaller text-inputs over selections up till a bigger and more complex upload section items.
+>
+> [Link to Form Components](./showcase/Form/index.md)
 
 ## Custom directives
 
-Within the showcase, there are some ungrouped, simple custom directives.
-
-[Check out the custom directives](./showcase/directives/index.md)
+> Within the showcase, there are some ungrouped, simple custom directives.
+>
+> [Check out the custom directives](./showcase/directives/index.md)
 
 ## Dependencies
 

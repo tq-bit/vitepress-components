@@ -8,7 +8,7 @@ module.exports = {
     nav: [
       { text: "Home", link: "/" },
       { text: "Showcase", link: "/showcase/" },
-      { text: "Github", link: "https://github.com/tq-bit/radunia" },
+      { text: "Github", link: "https://github.com/tq-bit/vitepress-components" },
     ],
   },
 };
