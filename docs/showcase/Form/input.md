@@ -29,8 +29,6 @@ An extensive list of HTML5 input elements can be found [at the end of this page]
 | **Styles**     | ../../assets/main.css                       | CSS Variables       | No       |
 | **Functions**  | ../../use/uuid                              | Assign ids to items | No       |
 
-
-
 ## Usage
 
 Import the following component/s:
@@ -51,15 +49,16 @@ You can use `v-model` & `label` bindings on the component. The placeholder defau
 **Example**
 
 ```vue
+<template>
+  <q-input label="Name" v-model="inputValue" />
+  <p>Output: {{inputValue}}</p>
+</template>
+
 <script setup>
 import { ref } from 'vue';
 const inputValue = ref('');
 </script>
 
-<template>
-  <q-input label="Name" v-model="inputValue" />
-  <p>Output: {{inputValue}}</p>
-</template>
 ```
 
 ### Placeholder prefix
@@ -74,15 +73,15 @@ In case the label alone is not enough, you can extend it with a prefix. Doing so
 **Example**
 
 ```vue
-<script setup>
-import { ref } from 'vue';
-const inputValue = ref('');
-</script>
-
 <template>
   <q-input labelPrefix="Type in your " label="Name" v-model="inputValue" />
   <p>Output: {{inputValue}}</p>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+const inputValue = ref('');
+</script>
 ```
 
 ### Required fields
@@ -106,18 +105,18 @@ Adding `required` as an attribute also adds a `requiredSign`. You can optionally
 **Example**
 
 ```vue
-<script setup>
-import { ref } from 'vue';
-const inputValue = ref('');
-const onSubmit = () => alert(`Your input: ${inputValue.value}`);
-</script>
-
 <template>
   <form @submit.prevent="onSubmit">
     <q-input labelPrefix="Type in your " required requiredSign="(required)" label="Name" v-model="inputValue" />
     <p>Output: {{inputValue}}</p>
   </form>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+const inputValue = ref('');
+const onSubmit = () => alert(`Your input: ${inputValue.value}`);
+</script>
 ```
 
 ### Error handling
@@ -132,18 +131,18 @@ Errors are rendered right below the input element. The form below will toggle er
 **Example**
 
 ```vue
-<script setup>
-import { ref } from 'vue';
-const inputError = ref('');
-const onError = () => (inputError.value = inputError.value === "" ? "An error has occured" : "");
-</script>
-
 <template>
   <form @submit.prevent="onError">
     <q-input :error="inputError" labelPrefix="Type in your " label="Name" v-model="inputValue" />
     <p>Erorr: {{inputError}}</p>
   </form>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+const inputError = ref('');
+const onError = () => (inputError.value = inputError.value === "" ? "An error has occured" : "");
+</script>
 ```
 
 

@@ -1,5 +1,5 @@
 <template>
-    <label :for="id" class="q-input-label">
+    <label v-if="label" :for="id" class="q-input-label">
       {{ label }}
       <span class="q-input-required-sign" v-if="required">{{
         requiredSign
@@ -11,11 +11,11 @@
         'q-error': !!error,
       }"
       v-bind="$attrs"
+      @input="$emit('update:modelValue', $event.target.value)"
+      :value="modelValue"
       :id="id"
       :required="required"
       :placeholder="labelPrefix ? labelPrefix + label.toLowerCase() : label"
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
       :aria-label="label"
       :aria-required="required"
       :aria-describedby="error ? `${id}-error` : null"
@@ -48,22 +48,18 @@ export default {
       type: String,
       default: "",
     },
-
     modelValue: {
       type: [String, Number],
       default: "",
     },
-
     error: {
       type: String,
       default: "",
     },
-
     required: {
       type: Boolean,
       default: false,
     },
-
     requiredSign: {
       type: String,
       default: "*",
@@ -109,7 +105,6 @@ export default {
 .q-input-base:focus.q-error {
   border-bottom: var(--gap-xxs) solid var(--color-error);
 }
-
 
 .q-input-error-msg {
   font-size: var(--text-xs);
