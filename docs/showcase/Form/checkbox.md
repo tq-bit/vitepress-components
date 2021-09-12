@@ -110,6 +110,6 @@ const inputValue = ref(false);
 
 ## Full component's code
 
-### QInputGroup
+### QCheckbox
 
-<<< @/components/Form/QInputGroup.vue
+<<< @/components/Form/QCheckbox.vue

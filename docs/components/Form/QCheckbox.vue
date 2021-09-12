@@ -32,7 +32,6 @@
       :class="{ 'q-switch-active': modelValue }"
     >
       <div
-        @click="$emit('update:modelValue', !$event.target.checked)"
         class="q-switch-toggle"
         :class="{ 'q-switch-toggle-checked': modelValue }"
       ></div>
