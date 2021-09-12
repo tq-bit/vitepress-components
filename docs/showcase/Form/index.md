@@ -8,7 +8,8 @@
 
 ## Input elements
 
-| Namespace                 | Name        |          Link          |
-| ------------------------- | ----------- | :--------------------: |
-| /components/Form/QInput/  | QInput.vue  |  [QInput](./input.md)  |
-| /components/Form/QSelect/ | QSelect.vue | [QSelect](./select.md) |
+| Namespace                   | Name          |            Link            |
+| --------------------------- | ------------- | :------------------------: |
+| /components/Form/QInput/    | QInput.vue    |    [QInput](./input.md)    |
+| /components/Form/QSelect/   | QSelect.vue   |   [QSelect](./select.md)   |
+| /components/Form/QCheckbox/ | QCheckbox.vue | [QCheckbox](./checkbox.md) |

@@ -63,6 +63,11 @@
   --text-size-lg: 1.15rem;
   --text-size-xl: 1.35rem;
   --text-size-xxl: 1.65rem;
+
+  /* Opacity variables */
+  --opacity-disabled: 0.55;
+  --opacity-cloudy: 0.85;
+  --opacity-enabled: 1;
 }
 
 * {
