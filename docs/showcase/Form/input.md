@@ -6,6 +6,17 @@ import QInput from '../../components/Form/QInput.vue'
 const inputValue = ref('');
 const inputError = ref('');
 
+const inputOptions = [
+  'John Doe',
+  'Erich Sutherland',
+  'Jane Doenym',
+];
+const inputOptionsText = [
+  { key: 1, text: "One Visitor", value: 1 },
+  { key: 2, text: "Two Visitors", value: 2, disabled: true },
+  { key: 3, text: "Three visitors", value: 3 }
+];
+
 const onError = () => (inputError.value = inputError.value === "" ? "An error has occured" : "");;
 const onSubmit = () => alert(`Your input: ${inputValue.value}`);
 </script>
@@ -115,6 +126,31 @@ Adding `required` as an attribute also adds a `requiredSign`. You can optionally
 <script setup>
 import { ref } from 'vue';
 const inputValue = ref('');
+const onSubmit = () => alert(`Your input: ${inputValue.value}`);
+</script>
+```
+
+### Suggestions (datalist)
+
+<form @submit.prevent="onSubmit" style="padding:0.5rem;border:1px solid red;border-radius:4px;">
+  <q-input labelPrefix="Type in your " :options="inputOptions" required requiredSign="(required)" label="Name" v-model="inputValue" />
+  <p>Output: {{inputValue}}</p>
+</form>
+
+**Example**
+
+```vue
+<template>
+  <form @submit.prevent="onSubmit">
+    <q-input labelPrefix="Type in your " required requiredSign="(required)" label="Name" v-model="inputValue" />
+    <p>Output: {{inputValue}}</p>
+  </form>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+const inputValue = ref('');
+const options = inputOptions
 const onSubmit = () => alert(`Your input: ${inputValue.value}`);
 </script>
 ```

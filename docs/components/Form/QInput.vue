@@ -1,34 +1,43 @@
 <template>
-    <label v-if="label" :for="id" class="q-input-label">
-      {{ label }}
-      <span class="q-input-required-sign" v-if="required">{{
-        requiredSign
-      }}</span>
-    </label>
-    <input
-      class="q-input-base"
-      :class="{
-        'q-error': !!error,
-      }"
-      v-bind="$attrs"
-      @input="$emit('update:modelValue', $event.target.value)"
-      :value="modelValue"
-      :id="id"
-      :required="required"
-      :placeholder="labelPrefix ? labelPrefix + label.toLowerCase() : label"
-      :aria-label="label"
-      :aria-required="required"
-      :aria-describedby="error ? `${id}-error` : null"
-      :aria-invalid="error ? true : null"
-    />
-    <small
-      v-if="error"
-      class="q-input-error-msg"
-      :id="`${id}-error`"
-      aria-live="assertive"
-    >
-      {{ error }}
-    </small>
+  <label v-if="label" :for="id" class="q-input-label">
+    {{ label }}
+    <span class="q-input-required-sign" v-if="required">{{
+      requiredSign
+    }}</span>
+  </label>
+  <input
+    :list="options ? `${id}-options` : null"
+    class="q-input-base"
+    :class="{
+      'q-error': !!error,
+    }"
+    v-bind="$attrs"
+    @input="$emit('update:modelValue', $event.target.value)"
+    :value="modelValue"
+    :id="id"
+    :required="required"
+    :placeholder="labelPrefix ? labelPrefix + label.toLowerCase() : label"
+    :aria-label="label"
+    :aria-required="required"
+    :aria-describedby="error ? `${id}-error` : null"
+    :aria-invalid="error ? true : null"
+  />
+  <datalist :id="`${id}-options`">
+    <option
+      v-for="option in options"
+      :value="option.value ? option.value : option"
+      :key="option"
+    ></option>
+  </datalist>
+
+  <small
+    v-if="error"
+    class="q-input-error-msg"
+    :id="`${id}-error`"
+    aria-live="assertive"
+  >
+    {{ error }}
+  </small>
 </template>
 
 <script>
@@ -47,6 +56,9 @@ export default {
     label: {
       type: String,
       default: "",
+    },
+    options: {
+      type: Array,
     },
     modelValue: {
       type: [String, Number],
@@ -69,6 +81,12 @@ export default {
 </script>
 
 <style scoped>
+datalist {
+  width: 100%;
+  background-color: var(--background-color-primary);
+  color: var(--text-color-primary);
+}
+
 .q-input-base,
 .q-input-label {
   display: block;
