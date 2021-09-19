@@ -1,14 +1,24 @@
 <template>
   <button
-    :id="id"
     class="q-button-base"
+    :id="id"
+    :disabled="loading"
+    :aria-disabled="loading"
+    :aria-busy="loading"
     :class="{
-      'q-button-v-default': variant === 'default',
-      'q-button-v-big': variant === 'big',
+      'q-button-u-full-width': fluid === true,
+      'q-button-u-disabled': loading,
+      'q-button-v-primary': variant === 'primary',
+      'q-button-v-secondary': variant === 'secondary',
+      'q-button-v-info': variant === 'info',
+      'q-button-v-success': variant === 'success',
+      'q-button-v-warning': variant === 'warning',
+      'q-button-v-error': variant === 'error',
       'q-button-v-link': variant === 'link',
-      'q-button-c-primary': coloring === 'primary',
-      'q-button-c-secondary': coloring === 'secondary',
-      'q-button-c-bright': coloring === 'bright',
+      'q-button-s-small': size === 'small',
+      'q-button-s-medium': size === 'medium',
+      'q-button-s-large': size === 'large',
+      'q-button-s-xlarge': size === 'xlarge',
     }"
   >
     <i v-if="loading">
@@ -39,25 +49,42 @@ export default {
       required: true,
       default: "",
     },
-    coloring: {
+    fluid: {
+      type: Boolean,
+      default: false,
+    },
+    variant: {
       type: String,
       required: false,
       default: "primary",
       validator(value) {
         const isPrimary = value === "primary";
-        const isBright = value === "bright";
-        return isPrimary || isBright;
+        const isSecondary = value === "secondary";
+        const isInfo = value === "info";
+        const isSuccess = value === "success";
+        const isWarning = value === "warning";
+        const isError = value === "error";
+        const isLink = value === "link";
+        return (
+          isPrimary ||
+          isSecondary ||
+          isInfo ||
+          isSuccess ||
+          isWarning ||
+          isError ||
+          isLink
+        );
       },
     },
-    variant: {
+    size: {
       type: String,
-      required: false,
-      default: "default",
+      default: "medium",
       validator(value) {
-        const isDefault = value === "default";
-        const isBig = value === "big";
-        const isLink = value === "link";
-        return isDefault || isBig || isLink;
+        const isSmall = value === "small";
+        const isMedium = value === "medium";
+        const isLarge = value === "large";
+        const isXlarge = value === "xlarge";
+        return isSmall || isMedium || isLarge || isXlarge;
       },
     },
   },
@@ -68,54 +95,135 @@ export default {
 .q-button-base {
   border: none;
   border-radius: var(--gap-xs);
-  color: var(--background-color-tartiary);
   cursor: pointer;
-  font-size: var(--text-size-sm);
-  margin: var(--gap-xs) 0;
-  padding: var(--gap-sm) var(--gap-sm);
+  margin: var(--gap-sm) var(--gap-sm) var(--gap-sm) 0;
   text-align: center;
+  font-weight: 600;
+}
+
+/* Util classes for the button */
+.q-button-u-fluid {
   width: 100%;
+  margin: 0;
 }
+
+.q-button-u-disabled {
+  opacity: var(--opacity-disabled)
+}
+
 /* Variant classes */
-.q-button-v-default {
-  padding: var(--gap-sm) var(--gap-sm);
-  font-size: var(--text-size-sm);
+.q-button-v-primary {
   background-color: var(--accent-color-primary);
-  font-weight: 600;
 }
-.q-button-v-big {
-  font-size: var(--text-size-xl);
-  padding: var(--gap-md) var(--gap-xl);
-  font-weight: 600;
+
+.q-button-v-secondary {
+  background-color: var(--accent-color-secondary);
 }
+
+.q-button-v-info {
+  background-color: var(--color-info);
+  color: var(--white-color);
+}
+
+.q-button-v-success {
+  background-color: var(--color-success);
+  color: var(--white-color);
+}
+
+.q-button-v-warning {
+  background-color: var(--color-warning);
+  color: var(--white-color);
+}
+
+.q-button-v-error {
+  background-color: var(--color-error);
+  color: var(--white-color);
+}
+
+.q-button-v-primary .loader,
+.q-button-v-secondary .loader {
+  border-top: 2px solid var(--background-color-tartiary);
+}
+
+.q-button-v-info .loader,
+.q-button-v-success .loader,
+.q-button-v-warning .loader,
+.q-button-v-error .loader {
+  border-top: 2px solid var(--white-color);
+}
+
 .q-button-v-link {
   background-color: transparent !important;
+  padding: var(--gap-sm);
   color: var(--accent-color-primary) !important;
+  font-size: var(--text-size-sm);
+  width: fit-content;
 }
+
 .q-button-v-link:hover {
   text-decoration: underline;
 }
-/* Color classes */
-.q-button-c-primary {
-  background-color: var(--accent-color-primary);
-  color: var(--background-color-tartiary);
+
+/* Sizing classes */
+.q-button-s-small {
+  padding: var(--gap-sm) var(--gap-lg);
+  font-size: var(--text-size-xs);
+  width: var(--el-size-sm);
 }
-.q-button-c-secondary {
-  background-color: var(--accent-color-secondary);
-  color: var(--background-color-tartiary);
+
+.q-button-s-small .loader {
+  width: var(--text-size-xs);
+  height: var(--text-size-xs);
 }
-.q-button-c-bright {
-  background-color: var(--background-color-tartiary);
-  color: var(--accent-color-primary);
+
+.q-button-s-medium {
+  padding: var(--gap-sm) var(--gap-xl);
+  font-size: var(--text-size-sm);
+  width: var(--el-size-md);
 }
+
+.q-button-s-medium .loader {
+  width: var(--text-size-sm);
+  height: var(--text-size-sm);
+}
+
+.q-button-s-large {
+  padding: var(--gap-md) var(--gap-xxl);
+  font-size: var(--text-size-md);
+  width: var(--el-size-lg);
+}
+
+.q-button-s-large .loader {
+  width: var(--text-size-md);
+  height: var(--text-size-md);
+}
+
+.q-button-s-xlarge {
+  padding: var(--gap-md) var(--gap-xxl);
+  font-size: var(--text-size-lg);
+  width: var(--el-size-xl);
+}
+
+.q-button-s-xlarge .loader {
+  width: var(--text-size-lg);
+  height: var(--text-size-lg);
+}
+
+/* Text color classes */
+.q-button-c-text-bright {
+  color: var(--white-color) !important;
+}
+
+.q-button-c-text-dark {
+  color: var(--black-color) !important;
+}
+
 /* Styles for the loader */
 .loader {
   display: block;
   margin: auto;
-  width: var(--text-size-lg);
-  height: var(--text-size-lg);
+  padding: var(--gap-xs);
   border-radius: 50%;
-  border-top: 2px solid var(--background-color-tartiary);
   border-right: 2px solid transparent;
   animation: fullRotation 1s linear infinite;
 }

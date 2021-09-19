@@ -47,8 +47,9 @@
   --el-size-xs: 4rem;
   --el-size-sm: 7.5rem;
   --el-size-md: 10rem;
-  --el-size-l: 15rem;
-  --el-size-xl: 20rem;
+  --el-size-lg: 12.5rem;
+  --el-size-xl: 15rem;
+  --el-size-xxl: 20rem;
   --gap-tiny: 0.1rem;
   --gap-xxs: 0.125rem;
   --gap-xs: 0.25rem;
@@ -58,6 +59,8 @@
   --gap-xl: 1.25rem;
   --gap-xxl: 1.5rem;
   --gap-max: 1.75rem;
+  --text-size-xxs: 0.6rem;
+  --text-size-xs: 0.75rem;
   --text-size-sm: 0.9rem;
   --text-size-md: 1.05rem;
   --text-size-lg: 1.15rem;

@@ -125,7 +125,6 @@ QInputGroup provides a wrapper for input elements using the `<legend>` - tag.
 <p>Name: {{inputForm.firstName}} {{inputForm.lastName}} </p>
 <p>Adress: {{inputForm.postalCode}} {{inputForm.cityName}}</p>
 <p>Reserving for: {{inputForm.reservanceDate}} | {{inputForm.visitors}}</p>
-{{inputForm}}
 <q-button label="Submit form" type="Submit" />
 <q-button variant="link" label="Reset form" type="Reset" @click="onResetForm"/>
 </section>
