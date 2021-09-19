@@ -150,7 +150,11 @@ const onSubmit = () => alert(`Your input: ${inputValue.value}`);
 <script setup>
 import { ref } from 'vue';
 const inputValue = ref('');
-const options = inputOptions
+const inputOptions = [
+  'John Doe',
+  'Eric Sutherland',
+  'Jane Doenym',
+];
 const onSubmit = () => alert(`Your input: ${inputValue.value}`);
 </script>
 ```
