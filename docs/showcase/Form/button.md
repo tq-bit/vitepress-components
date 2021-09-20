@@ -195,31 +195,9 @@ Coloring and sizing can be customized using `variant` and `size` bindings.
 
 ### Wave effect
 
-Once registered, you can use the `v-ripple` - directive on these buttons, making them resemble their material design counterparts.
+Once registered, you can use the `v-ripple` - directive on these buttons, making them resemble their material design counterparts. Read more about ripple effects [here](../directives/ripple.md)
 
 <q-button variant="info" label="Waving infos" v-ripple />
-
-**Example**
-
-*Register the directive in the main.js file*
-
-```js
-import { createApp, } from 'vue';
-import App from './App.vue';
-
-const app = createApp(App).use(router);
-
-app.directive('ripple', vRipple);
-app.mount('#app');
-```
-
-*In the component*
-
-```vue
-<template>
-  <q-button variant="info" label="Waving infos" v-ripple />
-</template>
-```
 
 ## Full component's code
 

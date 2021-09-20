@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root.dark-theme {
   /* Background colors */
   --background-color-primary: #1e1e1e;
