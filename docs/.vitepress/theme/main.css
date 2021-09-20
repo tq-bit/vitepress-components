@@ -43,6 +43,7 @@
   --duration-quick: 0.5s;
   --duration-semi: 0.75s;
   --duration-slow: 1s;
+  --el-size-tiny: 1rem;
   --el-size-xxs: 2.5rem;
   --el-size-xs: 4rem;
   --el-size-sm: 7.5rem;
