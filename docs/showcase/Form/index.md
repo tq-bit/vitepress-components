@@ -5,7 +5,6 @@
 | Namespace                     | Name            |               Link               |
 | ----------------------------- | --------------- | :------------------------------: |
 | /components/Form/QInputGroup/ | QInputGroup.vue | [QInputGroup](./input-groups.md) |
-| /components/Form/QForm/       | QForm.vue       |    [QForm](./form-wrapper.md)    |
 
 ## Input elements
 
