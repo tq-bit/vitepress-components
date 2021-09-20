@@ -75,7 +75,7 @@ import QButton from '../../components/Form/QButton.vue'
 By default, the button has the defined primary color set. The text color switches with the currently active theme, the label & the loader are toggled based on whether `loading` is set to true or false
 
 <div style="padding:0.5rem;border:1px solid red;border-radius:4px;">
-  <q-button label="Submit form" :loading="isLoading" @click="onButtonClick" />
+  <q-button label="Submit form" v-ripple />
   <p v-if="isLoading && loadingCounter > 1">Done in {{loadingCounter}} seconds ...</p>
   <p v-else-if="isLoading && loadingCounter === 1">Almost there ...</p>
   <p v-else>Loader idle</p>
