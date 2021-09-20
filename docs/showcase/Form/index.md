@@ -15,10 +15,3 @@
 | /components/Form/QSelect/   | QSelect.vue   |   [QSelect](./select.md)   |
 | /components/Form/QCheckbox/ | QCheckbox.vue | [QCheckbox](./checkbox.md) |
 | /components/Form/QButton/   | QButton.vue   |   [QButton](./button.md)   |
-
-## Uploader elements
-
-| Namespace                        | Name          |             Link              |
-| -------------------------------- | ------------- | :---------------------------: |
-| /components/Form/QUploader/      | QUploader.vue |  [QUploader](./uploader.md)   |
-| /components/Form/QUploadSection/ | QSelect.vue   | [QSelect](./uploadsection.md) |
