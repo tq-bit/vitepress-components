@@ -10,6 +10,7 @@
       <span>🌙</span>
       <span>☀️</span>
       <div
+        tabindex="0"
         class="q-toggle"
         :class="{ 'q-toggle-checked': userTheme === 'dark-theme' }"
       ></div>
@@ -100,7 +101,8 @@ export default {
   height: calc(var(--el-size-xs) * 0.4);
   width: calc(var(--el-size-xs) * 0.4);
   transform: translateX(0);
-  transition: transform 0.3s ease, background-color 0.5s ease;
+  transition: transform 0.3s cubic-bezier(0.39, 0.58, 0.57, 1), background-color 0.5s ease;
+  outline: none;
 }
 
 .q-toggle-checked {
