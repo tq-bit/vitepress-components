@@ -6,13 +6,19 @@
       type="checkbox"
       class="q-switch-checkbox"
     />
-    <label class="q-switch-label" :for="themeButtonId">
+    <label
+      class="q-switch-label"
+      :class="{ 'q-switch-disabled': disabled }"
+      :for="themeButtonId"
+    >
       <span>🌙</span>
       <span>☀️</span>
       <div
         tabindex="0"
         class="q-toggle"
-        :class="{ 'q-toggle-checked': userTheme === 'dark-theme' }"
+        :class="{
+          'q-toggle-checked': userTheme === 'dark-theme',
+        }"
       ></div>
     </label>
   </div>
@@ -23,15 +29,17 @@ import uuid from "../../../use/uuid.js";
 import { ref, onMounted } from "vue";
 
 export default {
-  setup({ initWithPreference }) {
+  setup({ initWithPreference, disabled }) {
     const themeButtonId = uuid();
     let userTheme = ref("");
     const toggleTheme = () => {
-      const activeTheme = localStorage.getItem("user-theme");
-      if (activeTheme === "light-theme") {
-        setTheme("dark-theme");
-      } else {
-        setTheme("light-theme");
+      if (!disabled) {
+        const activeTheme = localStorage.getItem("user-theme");
+        if (activeTheme === "light-theme") {
+          setTheme("dark-theme");
+        } else {
+          setTheme("light-theme");
+        }
       }
     };
 
@@ -63,8 +71,11 @@ export default {
   props: {
     initWithPreference: {
       type: Boolean,
-      required: false,
       default: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -101,8 +112,13 @@ export default {
   height: calc(var(--el-size-xs) * 0.4);
   width: calc(var(--el-size-xs) * 0.4);
   transform: translateX(0);
-  transition: transform 0.3s cubic-bezier(0.39, 0.58, 0.57, 1), background-color 0.5s ease;
+  transition: transform 0.3s cubic-bezier(0.39, 0.58, 0.57, 1),
+    background-color 0.5s ease;
   outline: none;
+}
+
+.q-switch-disabled {
+  opacity: var(--opacity-disabled);
 }
 
 .q-toggle-checked {

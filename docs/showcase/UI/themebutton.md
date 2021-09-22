@@ -44,7 +44,7 @@ Just import and include the component into a single file.
 
 By default, the user's browser settings are preferred over those in localstorage. You can use `:initWithPreference="false"` to overwrite this behavior.
 
-<q-theme-button :initWithPreference="false" />
+<q-theme-button disabled :initWithPreference="false" />
 
 **Example**
 
