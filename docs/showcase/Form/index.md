@@ -14,3 +14,4 @@
 | /components/Form/QSelect/   | QSelect.vue   |   [QSelect](./select.md)   |
 | /components/Form/QCheckbox/ | QCheckbox.vue | [QCheckbox](./checkbox.md) |
 | /components/Form/QButton/   | QButton.vue   |   [QButton](./button.md)   |
+| /components/Form/QDropdown/ | QDropdown.vue | [QDropdown](./dropdown.md) |
