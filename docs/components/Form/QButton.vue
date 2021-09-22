@@ -107,6 +107,11 @@ export default {
   margin: 0;
 }
 
+.q-button-base.q-button-u-full-width {
+  display: block;
+  width: 100%;
+}
+
 .q-button-u-disabled {
   opacity: var(--opacity-disabled)
 }
@@ -190,6 +195,7 @@ export default {
 .q-button-s-large {
   padding: var(--gap-md) var(--gap-xxl);
   font-size: var(--text-size-md);
+  height: var(--el-size-xxs);
   width: var(--el-size-lg);
 }
 
@@ -201,6 +207,7 @@ export default {
 .q-button-s-xlarge {
   padding: var(--gap-md) var(--gap-xxl);
   font-size: var(--text-size-lg);
+  height: var(--el-size-xs);
   width: var(--el-size-xl);
 }
 
@@ -225,7 +232,7 @@ export default {
   padding: var(--gap-xs);
   border-radius: 50%;
   border-right: 2px solid transparent;
-  animation: fullRotation 1s linear infinite;
+  animation: fullRotation var(--duration-semi) linear infinite;
 }
 @keyframes fullRotation {
   to {

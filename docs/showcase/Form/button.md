@@ -116,9 +116,7 @@ const onButtonClick = () => {
 Coloring and sizing can be customized using `variant` and `size` bindings.
 
 <div style="padding:0.5rem;border:1px solid red;border-radius:4px;">
-  <p>
-  <strong>Small sizing</strong>
-  </p>
+  <p><strong>Small sizing</strong> | Added by <code>size="small"</code></p>
   <q-button variant="info" size="small" label="Info" :loading="isLoading" @click="onButtonClick" />
   <q-button variant="success" size="small" label="Success" :loading="isLoading" @click="onButtonClick" />
   <q-button variant="warning" size="small" label="Warning" :loading="isLoading" @click="onButtonClick" />
@@ -134,9 +132,7 @@ Coloring and sizing can be customized using `variant` and `size` bindings.
   </template>
   ```
 
-  <p>
-  <strong>Default sizing</strong>
-  </p>
+  <p><strong>Default sizing</strong> | Default setting</p>
   <q-button variant="info" label="Info" :loading="isLoading" @click="onButtonClick" />
   <q-button variant="success" label="Success" :loading="isLoading" @click="onButtonClick" />
   <q-button variant="warning" label="Warning" :loading="isLoading" @click="onButtonClick" />
@@ -191,6 +187,24 @@ Coloring and sizing can be customized using `variant` and `size` bindings.
   <p v-if="isLoading && loadingCounter > 1">Done in {{loadingCounter}} seconds ...</p>
   <p v-else-if="isLoading && loadingCounter === 1">Almost there ...</p>
   <p v-else>Loader idle</p>
+
+  <p><strong>Full width</strong> | Added by <code>fluid</code> binding:</p>
+
+  <q-button variant="info" fluid label="Info" :loading="isLoading" @click="onButtonClick" />
+  <q-button variant="success" fluid label="Success" :loading="isLoading" @click="onButtonClick" />
+  <q-button variant="warning" fluid label="Warning" :loading="isLoading" @click="onButtonClick" />
+  <q-button variant="error" fluid label="Error" :loading="isLoading" @click="onButtonClick" />
+  <q-button variant="primary" fluid label="Primary" :loading="isLoading" @click="onButtonClick" />
+  <q-button variant="secondary" fluid label="Secondary" :loading="isLoading" @click="onButtonClick" />
+  <q-button variant="link" fluid label="Link" @click="onButtonClick" />
+
+  **Example**
+  ```vue
+  <template>
+    <q-button variant="info" fluid label="Info" :loading="isLoading" @click="onButtonClick" />
+  </template>
+  ```
+
 </div>
 
 ### Wave effect
