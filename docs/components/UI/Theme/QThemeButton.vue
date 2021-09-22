@@ -95,15 +95,15 @@ export default {
   position: absolute;
   background-color: var(--accent-color-primary);
   border-radius: 50%;
-  top: calc(var(--el-size-xs) * 0.05);
-  left: calc(var(--el-size-xs) * 0.1);
-  height: calc(var(--el-size-xs) * 0.35);
-  width: calc(var(--el-size-xs) * 0.35);
+  top: calc(var(--el-size-xs) * 0.025);
+  left: calc(var(--el-size-xs) * 0.045);
+  height: calc(var(--el-size-xs) * 0.4);
+  width: calc(var(--el-size-xs) * 0.4);
   transform: translateX(0);
   transition: transform 0.3s ease, background-color 0.5s ease;
 }
 
 .q-toggle-checked {
-  transform: translateX(calc(var(--el-size-xs) * 0.4)) !important;
+  transform: translateX(calc(var(--el-size-xs) * 0.475)) !important;
 }
 </style>
