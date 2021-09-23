@@ -5,6 +5,7 @@ import DefaultTheme from "vitepress/theme";
 import QThemeButton from "../../components/UI/Theme/QThemeButton.vue";
 import QBreadcrumbs from "../../components/Navigation/QBreadcrumbs.vue";
 import "./main.css";
+import "./vstyles.css";
 
 const { Layout } = DefaultTheme;
 </script>

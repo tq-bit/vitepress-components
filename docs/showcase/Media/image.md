@@ -8,18 +8,18 @@ import QImage from '../../components/Media/QImage.vue';
 
 # QImage component
 
-Dead simple img component with lazy loading
+Dead simple img component with included lazy loading.
 
 ## Requirements
 
-| Type           | Path / Version                                  | Purpose              | Optional |
-| -------------- | ----------------------------------------------- | -------------------- | -------- |
-| **Styles**     | ../../assets/main.css                           | CSS Variables        | No       |
-| **Directives** | [../../directives/vLazy](../directives/lazy.md) | Lazy load this image | No       |
+| Type           | Path / Version                                  | Purpose             | Optional |
+| -------------- | ----------------------------------------------- | ------------------- | -------- |
+| **Styles**     | ../../assets/main.css                           | CSS Variables       | No       |
+| **Directives** | [../../directives/vLazy](../directives/lazy.md) | Lazy load the image | No       |
 
 ## Usage
 
-QImage can be used instead of any common image. It lazy loads the image by default using the browser's `IntersectionObserver`. It will be loaded once 25% of the image placeholder's content are visible within the screen area.
+QImage can be used instead of any common image. It lazy loads the image by default using the browser's `IntersectionObserver`. It will be loaded once part of the image comes into view.
 
 > This behavior can be overwritten inside the directive
 

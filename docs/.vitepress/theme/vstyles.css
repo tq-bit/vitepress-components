@@ -1,0 +1,107 @@
+
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+html.dark-theme input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background-color-secondary);
+}
+
+li {
+  color: var(--text-color-primary);
+  padding: var(--gap-xs) var(--gap-md);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color-primary);
+  margin: var(--gap-xl) 0;
+}
+
+small {
+  font-size: var(--text-size-xs);
+}
+
+table {
+  width: 100%;
+  margin: var(--gap-md) 0;
+  border-collapse: collapse;
+  color: var(--text-color-primary)
+}
+
+th {
+  padding: var(--gap-md);
+  border: none;
+  border-bottom: 1.25px solid var(--grey-color);
+}
+
+tr {
+  border: none;
+}
+
+td {
+  background-color: var(--background-color-primary);
+  padding: var(--gap-md);
+  border: none;
+  border-bottom: 1px solid var(--grey-color);
+}
+
+p {
+  color: var(--text-color-secondary);
+  margin: var(--gap-md) 0;
+  font-size: var(--text-size-md);
+  line-height: var(--gap-max);
+}
+
+code {
+  color: var(--text-color-primary);
+}
+
+hr {
+  border: 0.1px solid var(--grey-color);
+  border-style: dotted;
+  margin: var(--gap-lg) auto;
+  width: 90%;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Overwrite vitepress styles */
+
+.sidebar-link-item, .nav-bar-title {
+  color: var(--text-color-secondary) !important;
+}
+
+header.nav-bar {
+  background-color: var(--background-color-secondary) !important;
+  border-bottom: 0.25px solid var(--grey-color) !important;
+}
+
+.nav-link a.item {
+  color: var(--text-color-secondary) !important;
+}
+
+aside.sidebar {
+  background-color: var(--background-color-secondary) !important;
+  border-right: 0.25px solid var(--grey-color) !important;
+}
+
+.tip.custom-block {
+  background-color: var(--background-color-tartiary);
+  color: var(--text-color-primary) !important;
+}
