@@ -3,6 +3,7 @@ import Layout from './Layout.vue'
 import vRipple from '../../directives/vRipple';
 import vClip from '../../directives/vClip.js'
 import vScroll from '../../directives/vScroll'
+import vLazy from '../../directives/vLazy'
 
 export default {
   Layout,
@@ -11,6 +12,7 @@ export default {
     app.directive('ripple', vRipple);
     app.directive('clip', vClip);
     app.directive('scroll', vScroll);
+    app.directive('lazy', vLazy);
     // app is the Vue 3 app instance from `createApp()`. router is VitePress'
     // custom router. `siteData`` is a `ref`` of current site-level metadata.
   }

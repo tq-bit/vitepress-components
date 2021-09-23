@@ -24,6 +24,12 @@ Anything that is part of a web formular. Form components range from smaller text
 
 [Link to Form Components](./Form/index.md)
 
+### Media library
+
+All components that include dynamic and rich content
+
+[Link to Media Components](./Media/index.md)
+
 ## Custom directives
 
 Some useful [custom directives](https://v3.vuejs.org/guide/custom-directive.html), e.g. copying to clipboard when clicking on input el

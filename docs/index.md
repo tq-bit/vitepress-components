@@ -29,6 +29,12 @@ Components are grouped by purpose. Each resides in its own directory and has an 
 >
 > [Link to Form Components](./showcase/Form/index.md)
 
+### Media library
+
+> All components that include dynamic and rich content
+>
+> [Link to Media Components](./showcase/Media/index.md)
+
 ## Custom directives
 
 > Within the showcase, there are some ungrouped, simple custom directives.
