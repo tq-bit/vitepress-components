@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue';
-
 import QImage from '../../components/Media/QImage.vue';
 
 const inputValue = ref('');
@@ -12,11 +10,7 @@ const inputValue = ref('');
 
 # QImage component
 
-QImage is kept as simple as possible to allow for a variety of use cases. It defaults to `100%` width and uses some basic [aria attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA), including error handling.
-
-:::tip HTML input types
-An extensive list of HTML5 input elements can be found [at the end of this page](#list-of-input-types)
-:::
+Dead simple img component with lazy loading
 
 ## Requirements
 

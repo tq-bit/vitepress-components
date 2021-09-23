@@ -10,5 +10,8 @@
   "license": "MIT",
   "devDependencies": {
     "vitepress": "^0.16.1"
+  },
+  "dependencies": {
+    "patch-vue-directive-ssr": "^0.0.1"
   }
 }
