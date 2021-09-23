@@ -1,7 +1,5 @@
 <script setup>
 import QImage from '../../components/Media/QImage.vue';
-
-const inputValue = ref('');
 </script>
 
 <style>
