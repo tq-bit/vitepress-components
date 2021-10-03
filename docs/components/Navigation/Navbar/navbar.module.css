@@ -1,0 +1,163 @@
+/* Navbar wrapper */
+.q-navbar,
+.q-navbar-navigation-desktop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.q-navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 var(--gap-sm);
+}
+
+.q-navbar-brand-logo {
+  height: auto;
+  width: fit-content;
+}
+.q-navbar-brand-name {
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-size-md);
+}
+
+.q-navbar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* Standard vavbar item styles */
+.q-navbar-item {
+  display: inline-block;
+  font-size: var(--text-size-lg);
+  padding: var(--gap-lg);
+  position: relative;
+}
+
+.q-navbar-item:after {
+  bottom: 0;
+  background-color: var(--accent-color-primary);
+  content: '';
+  position: absolute;
+  left: 50%;
+  height: var(--gap-xxs);
+  width: 0;
+  transition: all var(--duration-quickest) ease-in-out;
+}
+
+.q-navbar-item:hover:after {
+  left: 0;
+  width: 100%;
+  transition: all var(--duration-quickest) ease-in;
+}
+
+/* Navbar variants */
+
+/***********\
+ * Primary *
+\***********/
+.q-navbar-v-primary {
+  background-color: var(--accent-color-primary);
+}
+.q-navbar-v-primary .q-navbar-item {
+  color: var(--white-color);
+}
+.q-navbar-v-primary .q-navbar-item:after {
+  background-color: var(--white-color);
+}
+
+/*************\
+ * Secondary *
+\*************/
+.q-navbar-v-secondary {
+  background-color: var(--accent-color-secondary);
+}
+.q-navbar-v-secondary .q-navbar-item {
+  color: var(--white-color);
+}
+.q-navbar-v-secondary .q-navbar-item:after {
+  background-color: var(--white-color);
+}
+
+/********\
+ * Info *
+\********/
+.q-navbar-v-info {
+  background-color: var(--color-info);
+}
+.q-navbar-v-info .q-navbar-item {
+  color: var(--white-color);
+}
+.q-navbar-v-info .q-navbar-item:after {
+  background-color: var(--white-color);
+}
+
+/***********\
+ * Success *
+\***********/
+.q-navbar-v-success {
+  background-color: var(--color-success);
+}
+.q-navbar-v-success .q-navbar-item {
+  color: var(--white-color);
+}
+.q-navbar-v-success .q-navbar-item:after {
+  background-color: var(--white-color);
+}
+
+/***********\
+ * Warning *
+\***********/
+.q-navbar-v-warning {
+  background-color: var(--color-warning);
+}
+.q-navbar-v-warning .q-navbar-item {
+  color: var(--white-color);
+}
+.q-navbar-v-warning .q-navbar-item:after {
+  background-color: var(--white-color);
+}
+
+/*********\
+ * Error *
+\*********/
+.q-navbar-v-error {
+  background-color: var(--color-error);
+}
+.q-navbar-v-error .q-navbar-item {
+  color: var(--white-color);
+}
+.q-navbar-v-error .q-navbar-item:after {
+  background-color: var(--white-color);
+}
+
+/**********\
+ * Bright *
+\**********/
+.q-navbar-v-bright {
+  background-color: var(--white-color);
+}
+.q-navbar-v-bright .q-navbar-item {
+  color: var(--black-color);
+}
+.q-navbar-v-bright .q-navbar-item:after {
+  background-color: var(--black-color);
+}
+
+/********\
+ * Dark *
+\********/
+.q-navbar-v-dark {
+  background-color: var(--black-color);
+}
+.q-navbar-v-dark .q-navbar-item {
+  color: var(--white-color);
+}
+.q-navbar-v-dark .q-navbar-item:after {
+  background-color: var(--white-color);
+}

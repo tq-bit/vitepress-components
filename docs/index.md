@@ -29,6 +29,12 @@ Components are grouped by purpose. Each resides in its own directory and has an 
 >
 > [Link to Form Components](./showcase/Form/index.md)
 
+### Navigation Library
+
+> Components to navigate with.
+>
+> [Link to Navigation Components](./showcase/Navigation/index.md)
+
 ### Media library
 
 > All components that include dynamic and rich content

@@ -28,6 +28,8 @@ QButton is used to trigger actions or to display links. It includes a variety of
 
 ## Styling
 
+<!-- TODO: replace variants with new properties -->
+
 ### Available variants
 
 **To be assigned with `variant` binding**
