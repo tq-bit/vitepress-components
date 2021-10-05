@@ -142,7 +142,6 @@ export default {
   background-color: var(--background-color-tartiary);
   list-style: none;
   min-width: var(--el-size-lg);
-  border-top-left-radius: var(--gap-xs);
   border-radius: var(--gap-xs);
   max-height: 0;
   overflow: hidden;

@@ -4,12 +4,6 @@
     </li>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style>
 @import './navbar.module.css';
 </style>

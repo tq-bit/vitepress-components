@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 var(--gap-sm);
 }
 
 .q-navbar-brand {
@@ -35,7 +36,7 @@
 .q-navbar-item {
   display: inline-block;
   font-size: var(--text-size-lg);
-  padding: var(--gap-lg);
+  padding: var(--gap-md);
   position: relative;
 }
 

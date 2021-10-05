@@ -64,7 +64,8 @@ export default {
         const isSuccess = value === "success";
         const isWarning = value === "warning";
         const isError = value === "error";
-        const isLink = value === "link";
+        const isDark = value === "dark";
+        const isBright = value === "bright";
         return (
           isPrimary ||
           isSecondary ||
@@ -72,7 +73,8 @@ export default {
           isSuccess ||
           isWarning ||
           isError ||
-          isLink
+          isDark ||
+          isBright
         );
       },
     },

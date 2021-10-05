@@ -34,9 +34,14 @@ QButton is used to trigger actions or to display links. It includes a variety of
 
 **To be assigned with `variant` binding**
 
-- `default` Same box and text sizing as the other default form elements
-- `big` Increased box - and text sizing.
-- `link` Uses anchor - tag coloring, width is capped to content
+- `primary`: Uses CSS color --accent-color-primary
+- `secondary`: Uses CSS color --accent-color-secondary
+- `info`: Uses CSS color --color-info
+- `success`: Uses CSS color --color-success
+- `warning`: Uses CSS color --color-warning
+- `error`: Uses CSS color --color-error
+- `dark`: Uses CSS color --black-color
+- `bright`: Uses CSS color --white-color
 
 ### Available coloring
 

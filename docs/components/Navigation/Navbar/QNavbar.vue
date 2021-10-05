@@ -24,15 +24,12 @@
         <slot name="navbar-right" />
       </ul>
     </div>
+    <!-- TODO: Add sidebar as component here -->
   </nav>
 </template>
 
 <script>
 export default {
-  setup() {
-
-  },
-
   props: {
     logo: {
       type: String,
@@ -48,13 +45,21 @@ export default {
       validator(value) {
         const isPrimary = value === "primary";
         const isSecondary = value === "secondary";
-        const isBright = value === "dark";
-        const isDark = value === "bright";
+        const isInfo = value === "info";
+        const isSuccess = value === "success";
+        const isWarning = value === "warning";
+        const isError = value === "error";
+        const isDark = value === "dark";
+        const isBright = value === "bright";
         return (
           isPrimary ||
           isSecondary ||
-          isBright ||
-          isDark
+          isInfo ||
+          isSuccess ||
+          isWarning ||
+          isError ||
+          isDark ||
+          isBright
         );
       },
     },
