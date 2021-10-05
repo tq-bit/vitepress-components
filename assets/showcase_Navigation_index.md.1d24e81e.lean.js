@@ -1,0 +1,1 @@
+import{_ as t,c as a,o as e,e as r}from"./app.3d32b2a2.js";const d='{"title":"Navigation Library","description":"","frontmatter":{},"relativePath":"showcase/Navigation/index.md","lastUpdated":1633448178321}',n={},i=[r('',2)];var o=t(n,[["render",function(t,r,d,n,o,s){return e(),a("div",null,i)}]]);export{d as __pageData,o as default};

@@ -1,1 +1,0 @@
-import{_ as t,c as a,o as e,e as r}from"./app.f755744a.js";const d='{"title":"Media Library","description":"","frontmatter":{},"relativePath":"showcase/Media/index.md","lastUpdated":1632413447902}',i={},h=[r('',2)];var n=t(i,[["render",function(t,r,d,i,n,s){return e(),a("div",null,h)}]]);export{d as __pageData,n as default};
