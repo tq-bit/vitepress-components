@@ -23,9 +23,7 @@
         'q-button-s-xlarge': size === 'xlarge',
       }"
     >
-      <span>
-        {{ label }}
-      </span>
+      <span>{{ label }}</span>
     </button>
     <ul
       :id="dropdownId"
@@ -46,87 +44,78 @@
         "
         v-for="option in options"
         :key="option"
-      >
-        {{ option.text ? option.text : option.value ? option.value : option }}
-      </li>
+      >{{ option.text ? option.text : option.value ? option.value : option }}</li>
     </ul>
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import uuid from "../../use/uuid";
 
-export default {
-  setup() {
-    const id = uuid();
-    const dropdownId = `dropdown-${id}`;
-    const isExpanded = ref(false);
-    const toggleDropdown = () => {
-      const dropdown = document.getElementById(dropdownId);
-      if (isExpanded.value === true) {
-        dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-      } else {
-        dropdown.style.maxHeight = 0;
-      }
-    };
-    return { id, dropdownId, isExpanded, toggleDropdown };
-  },
-  props: {
-    label: {
-      type: String,
-      required: true,
-      default: "",
-    },
-    align: {
-      type: String,
-      default: "left",
-      validator(value) {
-        const isLeft = value === "left";
-        const isRight = value === "right";
-        return isLeft || isRight;
-      },
-    },
-    variant: {
-      type: String,
-      required: false,
-      default: "primary",
-      validator(value) {
-        const isPrimary = value === "primary";
-        const isSecondary = value === "secondary";
-        const isInfo = value === "info";
-        const isSuccess = value === "success";
-        const isWarning = value === "warning";
-        const isError = value === "error";
-        const isLink = value === "link";
-        return (
-          isPrimary ||
-          isSecondary ||
-          isInfo ||
-          isSuccess ||
-          isWarning ||
-          isError ||
-          isLink
-        );
-      },
-    },
-    size: {
-      type: String,
-      default: "medium",
-      validator(value) {
-        const isSmall = value === "small";
-        const isMedium = value === "medium";
-        const isLarge = value === "large";
-        const isXlarge = value === "xlarge";
-        return isSmall || isMedium || isLarge || isXlarge;
-      },
-    },
-    options: {
-      type: Array,
-      required: true,
-    },
-  },
+const id = uuid();
+const dropdownId = `dropdown-${id}`;
+const isExpanded = ref(false);
+const toggleDropdown = () => {
+  const dropdown = document.getElementById(dropdownId);
+  if (isExpanded.value === true) {
+    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+  } else {
+    dropdown.style.maxHeight = 0;
+  }
 };
+defineProps({
+  label: {
+    type: String,
+    required: true
+  },
+  align: {
+    type: String,
+    default: "left",
+    validator(value) {
+      const isLeft = value === "left";
+      const isRight = value === "right";
+      return isLeft || isRight;
+    },
+  },
+  variant: {
+    type: String,
+    default: "primary",
+    validator(value) {
+      const isPrimary = value === "primary";
+      const isSecondary = value === "secondary";
+      const isInfo = value === "info";
+      const isSuccess = value === "success";
+      const isWarning = value === "warning";
+      const isError = value === "error";
+      const isLink = value === "link";
+      return (
+        isPrimary ||
+        isSecondary ||
+        isInfo ||
+        isSuccess ||
+        isWarning ||
+        isError ||
+        isLink
+      );
+    },
+  },
+  size: {
+    type: String,
+    default: "medium",
+    validator(value) {
+      const isSmall = value === "small";
+      const isMedium = value === "medium";
+      const isLarge = value === "large";
+      const isXlarge = value === "xlarge";
+      return isSmall || isMedium || isLarge || isXlarge;
+    },
+  },
+  options: {
+    type: Array,
+    required: true,
+  },
+})
 </script>
 
 <style scoped>

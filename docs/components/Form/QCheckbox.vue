@@ -26,63 +26,48 @@
     }"
   >
     <!-- Switch variant hides the input and replaces it with a custom element -->
-    <span
-      v-if="variant === 'switch'"
-      class="q-switch"
-      :class="{ 'q-switch-active': modelValue }"
-    >
-      <div
-        class="q-switch-toggle"
-        :class="{ 'q-switch-toggle-checked': modelValue }"
-      ></div>
+    <span v-if="variant === 'switch'" class="q-switch" :class="{ 'q-switch-active': modelValue }">
+      <div class="q-switch-toggle" :class="{ 'q-switch-toggle-checked': modelValue }"></div>
     </span>
     <!-- /Switch variant -->
-    <span
-      :class="{ 'q-input-label-flex': variant === 'switch' }"
-      v-html="label"
-    ></span>
+    <span :class="{ 'q-input-label-flex': variant === 'switch' }" v-html="label"></span>
   </label>
   <span class="q-input-required-sign" v-if="required">{{ requiredSign }}</span>
 </template>
 
-<script>
+<script setup>
 import uuid from "../../use/uuid";
+const id = uuid();
 
-export default {
-  setup() {
-    const id = uuid();
-    return { id };
+defineProps({
+  label: {
+    type: String,
+    default: "",
   },
-  props: {
-    label: {
-      type: String,
-      default: "",
-    },
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-    variant: {
-      type: String,
-      default: "checkbox",
-      validator(value) {
-        return value === "checkbox" || value === "switch";
-      },
-    },
-    error: {
-      type: String,
-      default: "",
-    },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    requiredSign: {
-      type: String,
-      default: "*",
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
+  variant: {
+    type: String,
+    default: "checkbox",
+    validator(value) {
+      return value === "checkbox" || value === "switch";
     },
   },
-};
+  error: {
+    type: String,
+    default: "",
+  },
+  required: {
+    type: Boolean,
+    default: false,
+  },
+  requiredSign: {
+    type: String,
+    default: "*",
+  },
+});
 </script>
 
 <style scoped>

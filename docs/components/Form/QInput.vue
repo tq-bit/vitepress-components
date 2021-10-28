@@ -1,9 +1,7 @@
 <template>
   <label v-if="label" :for="id" class="q-input-label">
     {{ label }}
-    <span class="q-input-required-sign" v-if="required">{{
-      requiredSign
-    }}</span>
+    <span class="q-input-required-sign" v-if="required">{{ requiredSign }}</span>
   </label>
   <input
     :list="options ? `${id}-options` : null"
@@ -23,11 +21,7 @@
     :aria-invalid="error ? true : null"
   />
   <datalist :id="`${id}-options`">
-    <option
-      v-for="option in options"
-      :value="option.value ? option.value : option"
-      :key="option"
-    ></option>
+    <option v-for="option in options" :value="option.value ? option.value : option" :key="option"></option>
   </datalist>
 
   <small
@@ -35,49 +29,39 @@
     class="q-input-error-msg"
     :id="`${id}-error`"
     aria-live="assertive"
-  >
-    {{ error }}
-  </small>
+  >{{ error }}</small>
 </template>
 
-<script>
+<script setup>
 import uuid from "../../use/uuid";
+const id = uuid();
 
-export default {
-  setup() {
-    const id = uuid();
-    return { id };
+defineProps({
+  labelPrefix: {
+    type: String,
+    default: null,
   },
-  props: {
-    labelPrefix: {
-      type: String,
-      default: null,
-    },
-    label: {
-      type: String,
-      default: "",
-    },
-    options: {
-      type: Array,
-    },
-    modelValue: {
-      type: [String, Number],
-      default: "",
-    },
-    error: {
-      type: String,
-      default: "",
-    },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    requiredSign: {
-      type: String,
-      default: "*",
-    },
+  label: {
+    type: String,
   },
-};
+  options: {
+    type: Array,
+  },
+  modelValue: {
+    type: [String, Number],
+  },
+  error: {
+    type: String,
+  },
+  required: {
+    type: Boolean,
+    default: false,
+  },
+  requiredSign: {
+    type: String,
+    default: "*",
+  },
+})
 </script>
 
 <style scoped>

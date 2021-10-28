@@ -7,18 +7,16 @@
   </fieldset>
 </template>
 
-<script>
-export default {
-  props: {
-    title: {
-      type: String,
-    },
-    border: {
-      type: Boolean,
-      default: false
-    }
+<script setup>
+defineProps({
+  title: {
+    type: String,
   },
-};
+  border: {
+    type: Boolean,
+    default: false
+  }
+});
 </script>
 
 <style scoped>

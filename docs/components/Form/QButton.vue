@@ -24,73 +24,65 @@
     <i v-if="loading">
       <div class="loader"></div>
     </i>
-    <span v-else>
-      {{ label }}
-    </span>
+    <span v-else>{{ label }}</span>
   </button>
 </template>
 
-<script>
+<script setup>
 import uuid from "../../use/uuid";
+const id = uuid();
 
-export default {
-  setup() {
-    const id = uuid();
-    return { id };
+defineProps({
+  loading: {
+    type: Boolean,
+    default: false,
   },
-  props: {
-    loading: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-    label: {
-      type: String,
-      required: true,
-      default: "",
-    },
-    fluid: {
-      type: Boolean,
-      default: false,
-    },
-    variant: {
-      type: String,
-      required: false,
-      default: "primary",
-      validator(value) {
-        const isPrimary = value === "primary";
-        const isSecondary = value === "secondary";
-        const isInfo = value === "info";
-        const isSuccess = value === "success";
-        const isWarning = value === "warning";
-        const isError = value === "error";
-        const isDark = value === "dark";
-        const isBright = value === "bright";
-        return (
-          isPrimary ||
-          isSecondary ||
-          isInfo ||
-          isSuccess ||
-          isWarning ||
-          isError ||
-          isDark ||
-          isBright
-        );
-      },
-    },
-    size: {
-      type: String,
-      default: "medium",
-      validator(value) {
-        const isSmall = value === "small";
-        const isMedium = value === "medium";
-        const isLarge = value === "large";
-        const isXlarge = value === "xlarge";
-        return isSmall || isMedium || isLarge || isXlarge;
-      },
+  label: {
+    type: String,
+    required: true,
+    default: "",
+  },
+  fluid: {
+    type: Boolean,
+    default: false,
+  },
+  variant: {
+    type: String,
+    required: false,
+    default: "primary",
+    validator(value) {
+      const isPrimary = value === "primary";
+      const isSecondary = value === "secondary";
+      const isInfo = value === "info";
+      const isSuccess = value === "success";
+      const isWarning = value === "warning";
+      const isError = value === "error";
+      const isDark = value === "dark";
+      const isBright = value === "bright";
+      return (
+        isPrimary ||
+        isSecondary ||
+        isInfo ||
+        isSuccess ||
+        isWarning ||
+        isError ||
+        isDark ||
+        isBright
+      );
     },
   },
-};
+  size: {
+    type: String,
+    default: "medium",
+    validator(value) {
+      const isSmall = value === "small";
+      const isMedium = value === "medium";
+      const isLarge = value === "large";
+      const isXlarge = value === "xlarge";
+      return isSmall || isMedium || isLarge || isXlarge;
+    },
+  },
+});
 </script>
 
 <style scoped>
@@ -115,7 +107,7 @@ export default {
 }
 
 .q-button-u-disabled {
-  opacity: var(--opacity-disabled)
+  opacity: var(--opacity-disabled);
 }
 
 /* Variant classes */

@@ -1,9 +1,11 @@
 <template>
   <label v-if="label" :for="id" class="q-input-label">
     {{ label }}
-    <span class="q-input-required-sign" v-if="required">{{
-      requiredSign
-    }}</span>
+    <span class="q-input-required-sign" v-if="required">
+      {{
+        requiredSign
+      }}
+    </span>
   </label>
   <select
     class="q-input-base"
@@ -22,9 +24,11 @@
     :aria-describedby="error ? `${id}-error` : null"
     :aria-invalid="error ? true : null"
   >
-    <option value="" selected disabled aria-disabled>
-      {{ labelPrefix ? labelPrefix + label.toLowerCase() : label }}
-    </option>
+    <option
+      selected
+      disabled
+      aria-disabled
+    >{{ labelPrefix ? labelPrefix + label.toLowerCase() : label }}</option>
     <option
       v-for="option in options"
       :value="option.value ? option.value : option"
@@ -33,59 +37,51 @@
       :aria-selected="option.text ? option.text : option.value ? option.value : option"
       :disabled="option.disabled"
       :aria-disabled="option.disabled"
-    >
-      {{ option.text ? option.text : option.value ? option.value : option }}
-    </option>
+    >{{ option.text ? option.text : option.value ? option.value : option }}</option>
   </select>
   <small
     v-if="error"
     class="q-input-error-msg"
     :id="`${id}-error`"
     aria-live="assertive"
-  >
-    {{ error }}
-  </small>
+  >{{ error }}</small>
 </template>
 
-<script>
+<script setup>
 import uuid from "../../use/uuid";
+const id = uuid();
 
-export default {
-  setup() {
-    const id = uuid();
-    return { id };
+defineProps({
+  labelPrefix: {
+    type: String,
+    default: null,
   },
-  props: {
-    labelPrefix: {
-      type: String,
-      default: null,
-    },
-    label: {
-      type: String,
-      default: "",
-    },
-    options: {
-      type: Array,
-      required: true,
-    },
-    modelValue: {
-      type: [String, Number],
-      default: "",
-    },
-    error: {
-      type: String,
-      default: "",
-    },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    requiredSign: {
-      type: String,
-      default: "*",
-    },
+  label: {
+    type: String,
+    default: "",
   },
-};
+  options: {
+    type: Array,
+    required: true,
+  },
+  modelValue: {
+    type: [String, Number],
+    default: "",
+  },
+  error: {
+    type: String,
+    default: "",
+  },
+  required: {
+    type: Boolean,
+    default: false,
+  },
+  requiredSign: {
+    type: String,
+    default: "*",
+  },
+});
+
 </script>
 
 <style scoped>
