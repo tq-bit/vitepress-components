@@ -1,0 +1,1 @@
+import{_ as t,c as a,o as e}from"./app.9e9dbd61.js";const r='{"title":"","description":"","frontmatter":{},"relativePath":"showcase/UI/navigation.md","lastUpdated":1629913415069}';var o=t({},[["render",function(t,r,o,s,d,i){return e(),a("div")}]]);export{r as __pageData,o as default};
